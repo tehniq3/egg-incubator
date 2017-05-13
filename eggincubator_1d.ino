@@ -687,7 +687,7 @@ if (meniu == 7) {
   }
 
 if (ete < 0.1) ete = 0.1;
-if (ete > 0.1) ete =3.0;
+if (ete > 3.0) ete =3.0;
 
    if (digitalRead(BUT3) == LOW) 
    {
