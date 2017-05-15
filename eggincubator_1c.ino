@@ -71,7 +71,7 @@ DallasTemperature sensors(&oneWire);
 // define pins for relay or leds
 #define temppeste A1
 #define umidpeste A2
-#define motoras 5
+#define motoras 9
 
 // define variable
 float te, t1, tes, dete;   // variable for temperature
