@@ -589,6 +589,7 @@ if (meniu == 4) {
   }
 //   delay(15);
 if (dehas < 1) dehas = 1;
+if (dehas > 5) dehas = 5;
     }
 }  // end loop for MENIU = 4
 
