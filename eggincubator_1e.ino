@@ -72,8 +72,8 @@ int resolution = 11;
 // define pins for relay or leds
 #define temppeste A1
 #define umidpeste A2
-#define motoras 5
-#define eroare 4
+#define motoras 9
+#define eroare 13
 
 // define variable
 float te, t1, tes, dete, ete;   // variable for temperature
