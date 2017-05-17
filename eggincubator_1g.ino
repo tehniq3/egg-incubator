@@ -406,25 +406,22 @@ if ((eroaret == 0) and (eroareh == 0))
  lcd.print("d");
 
 // spins part (turning eggs)
-if (((millis() - sfrotatii) > taim11) && (rotit == 0))
+while (((millis() - sfrotatii) > taim11) && (rotit == 0))
 {
   lcd.setCursor(0, 1);
-  lcd.print("Turning EGG's!  ");
+  lcd.print(" Turning EGGs!  ");
   digitalWrite(motoras, HIGH); 
-  rotire = 1;
-}
-if (((millis() - sfrotatii - taim11) > taim22) && (rotire == 1))
-{
+  delay(taim22);
   digitalWrite(motoras, LOW); 
   rotit = 1;
-} 
-if ((rotit == 1) && (rotire == 1))
-{
-  rotire = 0;
-  rotit = 0;
-  sfrotatii = millis();
 }
 
+if (rotit == 1)
+{
+  sfrotatii = millis();
+  rotit = 0;
+  lcd.clear();
+}
 } // last line for MENIU = 0
 
 
