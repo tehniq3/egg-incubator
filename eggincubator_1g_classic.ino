@@ -131,19 +131,18 @@ unsigned long tpintors;
 void setup()
 {
   Serial.begin(9600);
-/*
 // Initialize LCD display  
  lcd.begin(16, 2);
 // create custom symbol
 lcd.createChar(0, grad);
-*/
+/*
 // initialize the LCD
-  lcd.begin();
+  lcd.begin();  
 // create custom symbol
 lcd.createChar(0, grad);
   // Turn on the blacklight and print a message.
   lcd.backlight();
-
+*/
 // Initialize DHT sensor
   dht.begin();
 
