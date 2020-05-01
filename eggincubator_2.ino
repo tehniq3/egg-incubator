@@ -62,7 +62,7 @@ DHT dht(DHTPIN, DHTTYPE);
 #define ONE_WIRE_BUS dspin
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
-int resolution ;
+int resolution = 11 ;  // for more precission put 12
 
 // define pins for relay or leds
 #define temppeste A1
