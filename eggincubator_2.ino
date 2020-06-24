@@ -67,9 +67,14 @@ int resolution = 11 ;  // for more precission put 12
 // define pins for relay or leds
 #define temppeste A1
 #define umidpeste A2
-#define motoras 5
-#define motoras1 4
+/*#define motoras 5
+#define motoras1 4*/
 #define eroarepin 13
+
+//Use servo instead of motors to turn eggs
+#include <Servo.h> 
+Servo egg_servo;
+egg_servo.attach(5);
 
 byte motordr = 0 ; //Motor direction used mith dcmotor and hbridge l293d
 
@@ -464,7 +469,6 @@ while (((millis() - sfrotatii) > taim11) && (rotit == 0))
   digitalWrite(motoras, LOW); 
   rotit = 1;
 }
-
 if (rotit == 1)
 {
   sfrotatii = millis();
@@ -1035,5 +1039,4 @@ int getpushlength () {
 
 /*
  // subroutine to return the length of the button push.
-
 */
