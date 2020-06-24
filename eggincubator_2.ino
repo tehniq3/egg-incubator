@@ -75,7 +75,6 @@ int resolution = 11 ;  // for more precission put 12
 #include <Servo.h> 
 Servo egg_servo;
 egg_servo.attach(5,540,2400);
-egg_servo.write(90);
 
 byte motordr = 0 ; //Motor direction used mith dcmotor and hbridge l293d
 
@@ -184,8 +183,9 @@ sensors.begin();
 // set the default state for outputs
   digitalWrite(temppeste, LOW);
   digitalWrite(umidpeste, LOW);
-  digitalWrite(motoras, LOW);
-  digitalWrite(motoras1, LOW);  
+  /*digitalWrite(motoras, LOW);
+  digitalWrite(motoras1, LOW);*/
+  egg_servo.write(0); //Set egg servo to low
   digitalWrite(eroarepin, LOW);
 
 // set push buttons for menu
@@ -518,12 +518,14 @@ while (((millis() - sfrotatii) > taim11) && (rotit == 0))
   lcd.setCursor(0, 1);
   lcd.print(" Turning EGGs!  ");
   if (motordr%2 == 0) {
-  digitalWrite(motoras, HIGH); 
-  digitalWrite(motoras1, LOW);
+    egg_servo.write(180); //Set servo to high
+    /*digitalWrite(motoras, HIGH); 
+    digitalWrite(motoras1, LOW);*/
   } 
    if (motordr%2 == 1) {
-  digitalWrite(motoras, LOW); 
-  digitalWrite(motoras1, HIGH);
+     egg_servo.write(180); //Set servo to high
+     /*digitalWrite(motoras, LOW); 
+     digitalWrite(motoras1, HIGH);*/
   } 
   delay(taim22);
   digitalWrite(motoras, LOW); 
