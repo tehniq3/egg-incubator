@@ -70,6 +70,7 @@ int resolution = 11 ;  // for more precission put 12
 /*#define motoras 5
 #define motoras1 4*/
 #define eroarepin 13
+#define buzzer 9
 
 //Use servo instead of motors to turn eggs
 #include <Servo.h> 
@@ -181,6 +182,7 @@ sensors.begin();
  pinMode(motoras, OUTPUT);
  pinMode(motoras1, OUTPUT);
  pinMode(eroarepin, OUTPUT);
+ pinMode(buzzer, OUTPUT);
  
 
 // set the default state for outputs
@@ -189,7 +191,7 @@ sensors.begin();
   /*digitalWrite(motoras, LOW);
   digitalWrite(motoras1, LOW);*/
   egg_servo.write(0); //Set egg servo to low
-  //digitalWrite(eroarepin, LOW);
+  digitalWrite(eroarepin, LOW);
 
 // set push buttons for menu
   pinMode(BUT1, INPUT);
@@ -358,7 +360,7 @@ if (eroare == 1)
 {
   if (anulare == 0)
   {
-  //digitalWrite(eroarepin, HIGH);
+  (eroarepin, HIGH);
   tone(buzzer, 1000, 1000); //Use piezo buzzer for alarm
   delay(500);
   if ((digitalRead(BUT1) == LOW) or (digitalRead(BUT2) == LOW))
