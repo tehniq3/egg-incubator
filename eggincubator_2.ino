@@ -74,7 +74,8 @@ int resolution = 11 ;  // for more precission put 12
 //Use servo instead of motors to turn eggs
 #include <Servo.h> 
 Servo egg_servo;
-egg_servo.attach(5);
+egg_servo.attach(5,540,2400);
+egg_servo.write(90);
 
 byte motordr = 0 ; //Motor direction used mith dcmotor and hbridge l293d
 
