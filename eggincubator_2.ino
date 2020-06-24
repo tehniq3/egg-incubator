@@ -75,6 +75,8 @@ int resolution = 11 ;  // for more precission put 12
 #include <Servo.h> 
 Servo egg_servo;
 egg_servo.attach(5,540,2400);
+egg_servo.write(90);
+//delay(99999); //Used to calibrate the servo for initial install
 
 byte motordr = 0 ; //Motor direction used mith dcmotor and hbridge l293d
 
