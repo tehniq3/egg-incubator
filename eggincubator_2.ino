@@ -520,14 +520,24 @@ while (((millis() - sfrotatii) > taim11) && (rotit == 0))
   lcd.setCursor(0, 1);
   lcd.print(" Turning EGGs!  ");
   if (motordr%2 == 0) {
-    egg_servo.write(180); //Set servo to high
+    //Move the servo slowly
+    for (pos = 0; pos >= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+      myservo.write(pos);              // tell servo to go to position in variable 'pos'
+      delay(15);                       // waits 15ms for the servo to reach the position
+    }
+    //egg_servo.write(180); //Set servo to high
     /*digitalWrite(motoras, HIGH); 
     digitalWrite(motoras1, LOW);*/
   } 
    if (motordr%2 == 1) {
-     egg_servo.write(180); //Set servo to high
-     /*digitalWrite(motoras, LOW); 
-     digitalWrite(motoras1, HIGH);*/
+      //Move the servo slowly
+      for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+        myservo.write(pos);              // tell servo to go to position in variable 'pos'
+        delay(15);                       // waits 15ms for the servo to reach the position
+      }
+      //egg_servo.write(0); //Set servo to high
+      /*digitalWrite(motoras, LOW); 
+      digitalWrite(motoras1, HIGH);*/
   } 
   delay(taim22);
   digitalWrite(motoras, LOW); 
