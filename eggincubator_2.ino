@@ -181,6 +181,7 @@ sensors.begin();
  pinMode(motoras, OUTPUT);
  pinMode(motoras1, OUTPUT);
  pinMode(eroarepin, OUTPUT);
+ 
 
 // set the default state for outputs
   digitalWrite(temppeste, LOW);
@@ -188,7 +189,7 @@ sensors.begin();
   /*digitalWrite(motoras, LOW);
   digitalWrite(motoras1, LOW);*/
   egg_servo.write(0); //Set egg servo to low
-  digitalWrite(eroarepin, LOW);
+  //digitalWrite(eroarepin, LOW);
 
 // set push buttons for menu
   pinMode(BUT1, INPUT);
@@ -357,7 +358,9 @@ if (eroare == 1)
 {
   if (anulare == 0)
   {
-  digitalWrite(eroarepin, HIGH);
+  //digitalWrite(eroarepin, HIGH);
+  tone(buzzer, 1000, 1000); //Use piezo buzzer for alarm
+  delay(500);
   if ((digitalRead(BUT1) == LOW) or (digitalRead(BUT2) == LOW))
     {
     anulare = 1;
@@ -537,7 +540,7 @@ while (((millis() - sfrotatii) > taim11) && (rotit == 0))
       }
       //egg_servo.write(0); //Set servo to high
       /*digitalWrite(motoras, LOW); 
-      digitalWrite(motoras1, HIGH);*/
+     digitalWrite(motoras1, HIGH);*/
   } 
   delay(taim22);
   digitalWrite(motoras, LOW); 
