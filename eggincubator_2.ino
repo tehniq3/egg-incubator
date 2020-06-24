@@ -360,7 +360,7 @@ if (eroare == 1)
 {
   if (anulare == 0)
   {
-  (eroarepin, HIGH);
+  digitalWrite(eroarepin, HIGH);
   tone(buzzer, 1000, 1000); //Use piezo buzzer for alarm
   delay(500);
   if ((digitalRead(BUT1) == LOW) or (digitalRead(BUT2) == LOW))
@@ -545,8 +545,8 @@ while (((millis() - sfrotatii) > taim11) && (rotit == 0))
      digitalWrite(motoras1, HIGH);*/
   } 
   delay(taim22);
-  digitalWrite(motoras, LOW); 
-  digitalWrite(motoras1, LOW); 
+  //digitalWrite(motoras, LOW); 
+  //digitalWrite(motoras1, LOW); 
   rotit = 1;
   motordr++;
   /*
